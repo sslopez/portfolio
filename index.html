@@ -318,7 +318,7 @@
             font-size: 1.1rem;
         }
 
-        /* Executive Summary & Dynamic Metrics Grid */
+        /* Summary & Impact ROI */
         .summary-p {
             font-size: 0.95rem;
             color: var(--text-main);
@@ -492,7 +492,7 @@
             border-color: #bfdbfe;
         }
 
-        /* Featured Projects Grid */
+        /* All Projects Grid */
         .projects-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -501,7 +501,7 @@
 
         @media (min-width: 640px) {
             .projects-grid {
-                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
                 gap: 1.25rem;
             }
         }
@@ -514,7 +514,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.2s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         @media (min-width: 768px) {
@@ -526,6 +526,7 @@
         .project-card:hover {
             transform: translateY(-2px);
             border-color: #cbd5e1;
+            box-shadow: var(--shadow-sm);
         }
 
         .project-name {
@@ -549,7 +550,7 @@
             line-height: 1.5;
         }
 
-        /* Experience Timeline Mobile Responsive */
+        /* Experience Timeline */
         .experience-timeline {
             position: relative;
             padding-left: 1.25rem;
@@ -680,7 +681,7 @@
             color: var(--text-heading);
         }
 
-        /* Certifications & Education */
+        /* Certifications Grid */
         .cert-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -689,7 +690,7 @@
 
         @media (min-width: 640px) {
             .cert-grid {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
                 gap: 1rem;
             }
         }
@@ -698,7 +699,23 @@
             background-color: var(--bg-body);
             border-radius: var(--radius-md);
             border: 1px solid var(--border);
-            padding: 0.85rem;
+            padding: 0.85rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s ease;
+        }
+
+        .cert-card:hover {
+            border-color: var(--primary);
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        .cert-info {
             display: flex;
             align-items: center;
             gap: 0.75rem;
@@ -720,6 +737,11 @@
         .cert-issuer {
             font-size: 0.78rem;
             color: var(--text-muted);
+        }
+
+        .cert-link-icon {
+            color: var(--primary);
+            font-size: 0.85rem;
         }
 
         footer {
@@ -753,8 +775,9 @@
             <a href="mailto:sandeepslopez@gmail.com" class="btn btn-primary">
                 <i class="fa-solid fa-envelope"></i> Contact Me
             </a>
-            <a href="javascript:window.print()" class="btn btn-outline">
-                <i class="fa-solid fa-print"></i> Save / PDF
+            <!-- Direct Download Link to Raw PDF -->
+            <a href="https://raw.githubusercontent.com/sslopez/portfolio/main/SANDEEP%20S%20LOPEZ%20AZURE%20DATA%20ENGINEER.pdf" download target="_blank" class="btn btn-outline">
+                <i class="fa-solid fa-file-pdf"></i> Save / PDF
             </a>
         </div>
     </div>
@@ -770,7 +793,7 @@
                     <span class="pill"><i class="fa-solid fa-location-dot"></i> Bengaluru, India</span>
                     <span class="pill"><i class="fa-solid fa-phone"></i> +91-7559916461</span>
                     <span class="pill"><i class="fa-solid fa-envelope"></i> <a href="mailto:sandeepslopez@gmail.com">sandeepslopez@gmail.com</a></span>
-                    <span class="pill"><i class="fa-brands fa-linkedin"></i> <a href="#" target="_blank">LinkedIn</a></span>
+                    <span class="pill"><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/sandeep-s-lopez-780177182/" target="_blank">LinkedIn Profile</a></span>
                     <span class="pill"><i class="fa-solid fa-globe"></i> <a href="https://sslopez.github.io/portfolio/" target="_blank">Portfolio</a></span>
                 </div>
             </div>
@@ -860,32 +883,74 @@
         </div>
     </section>
 
-    <!-- Featured Projects -->
+    <!-- Featured Projects (All Resume Projects Included) -->
     <section>
         <div class="section-header">
             <i class="fa-solid fa-rocket"></i>
-            <span>Key High-Impact Projects</span>
+            <span>Key Projects & Technical Initiatives</span>
         </div>
         <div class="projects-grid">
             <div class="project-card">
                 <div>
                     <div class="project-name">DagMate – AI DataOps Platform</div>
-                    <div class="project-tech">Python • Airflow • Databricks • Slack API • OpenAI</div>
-                    <p class="project-desc">Architected a Slack-integrated self-service platform for pipeline operations, monitoring, and AI-assisted troubleshooting. Cut operational manual overhead by 70%.</p>
+                    <div class="project-tech">Python • Apache Airflow • Databricks • Slack API • OpenAI APIs</div>
+                    <p class="project-desc">Slack-based DataOps platform enabling self-service pipeline operations, workflow orchestration, monitoring, and automated troubleshooting. Reduced manual operational effort by 70%.</p>
                 </div>
             </div>
+
             <div class="project-card">
                 <div>
                     <div class="project-name">Databricks Cost Optimization</div>
                     <div class="project-tech">Azure Databricks • PySpark • SQL</div>
-                    <p class="project-desc">Engineered memory optimization strategies, execution plan tuning, and cluster resizing, delivering ~$120,000/month in recurring infrastructure cost savings.</p>
+                    <p class="project-desc">Optimized Azure Databricks workloads and implemented cluster cost optimization strategies, delivering ~$120K/month in cloud infrastructure cost savings.</p>
                 </div>
             </div>
+
             <div class="project-card">
                 <div>
                     <div class="project-name">Enterprise Airflow Modernization</div>
                     <div class="project-tech">Apache Airflow • Python • Azure Databricks</div>
-                    <p class="project-desc">Overhauled legacy scheduling and DAG structures, slashing total execution runtimes by 50% while significantly increasing SLA reliability.</p>
+                    <p class="project-desc">Restructured complex DAGs and scheduling workflows, reducing pipeline execution times by 50% and increasing system reliability.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <div class="project-name">AI-Powered Slack Data Assistant</div>
+                    <div class="project-tech">Python • Slack API • Databricks • OpenAI APIs</div>
+                    <p class="project-desc">Built AI assistants integrated with Databricks and enterprise datasets, enabling natural language data discovery, dataset insights, and operational troubleshooting.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <div class="project-name">SharePoint to Databricks Migration</div>
+                    <div class="project-tech">Python • SharePoint • Azure Databricks</div>
+                    <p class="project-desc">Led SharePoint-to-Databricks ingestion modernization by developing a Python-based ingestion framework, replacing legacy workflows and improving scalability.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <div class="project-name">Hadoop to Azure Databricks Migration</div>
+                    <div class="project-tech">Azure Databricks • Hadoop • PySpark • SQL</div>
+                    <p class="project-desc">Migrated enterprise-scale legacy Hadoop data pipelines to Azure Databricks, significantly improving processing performance and scalability.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <div class="project-name">CI/CD Automation for Data & Analytics</div>
+                    <div class="project-tech">GitHub Actions • Power BI • Git • Databricks</div>
+                    <p class="project-desc">Implemented automated CI/CD pipelines using GitHub Actions to automate deployments, improve release reliability, and accelerate delivery cycles.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <div class="project-name">Power BI Deployment Automation</div>
+                    <div class="project-tech">Power BI • GitHub Actions • Azure Data Factory</div>
+                    <p class="project-desc">Automated Power BI dashboard deployment and pipeline synchronization with Azure Data Factory to streamline analytics publishing.</p>
                 </div>
             </div>
         </div>
@@ -910,10 +975,13 @@
                     <span class="exp-date">07/2025 – Present • Karnataka, India</span>
                 </div>
                 <ul class="bullets">
-                    <li>Designed and maintained high-throughput ETL/ELT pipelines leveraging <strong>Apache Airflow, Azure Databricks, and Python</strong>.</li>
-                    <li>Developed AI-powered Slack assistants integrated with Databricks datasets, allowing engineering teams to conduct natural language data discovery and automated root-cause analysis.</li>
-                    <li>Automated software delivery cycles using <strong>GitHub Actions CI/CD</strong>, alongside robust observability, data quality validation, and alert frameworks.</li>
-                    <li>Created an AI-assisted Jira Health Dashboard for real-time tracking of sprint status, task aging, and team blockers.</li>
+                    <li>Designed, developed, and maintained enterprise-scale ETL/ELT pipelines using <strong>Apache Airflow, Azure Databricks, and Python</strong>.</li>
+                    <li>Built and optimized Apache Airflow DAGs, reducing job execution time by ~50% and improving reliability.</li>
+                    <li>Delivered ~$120K/month in infrastructure cost savings by optimizing Azure Databricks workloads.</li>
+                    <li>Developed <strong>DagMate</strong>, a Slack-based DataOps platform, reducing manual operational effort by 70%.</li>
+                    <li>Built AI-powered Slack assistants integrated with Databricks for natural language data discovery and automated troubleshooting.</li>
+                    <li>Modernized SharePoint-to-Databricks ingestion using a Python-based framework and built automated CI/CD via GitHub Actions.</li>
+                    <li>Developed an AI-assisted Jira Health Dashboard for real-time visibility into sprint health, task aging, and team performance metrics.</li>
                 </ul>
             </div>
 
@@ -928,8 +996,9 @@
                     <span class="exp-date">12/2024 – 06/2025 • Kerala, India</span>
                 </div>
                 <ul class="bullets">
-                    <li>Standardized developer workflows by containerizing Apache Airflow with <strong>Docker</strong> for local development.</li>
-                    <li>Built, optimized, and scheduled scalable ELT pipelines on <strong>Google Cloud Platform (GCP)</strong> using Airflow.</li>
+                    <li>Containerized Apache Airflow using <strong>Docker</strong> for local development and workflow orchestration.</li>
+                    <li>Designed, developed, and optimized complex Airflow DAGs for scalable ETL/ELT pipelines on <strong>Google Cloud Platform (GCP)</strong>.</li>
+                    <li>Automated data workflows and pipeline scheduling to improve reliability and operational efficiency.</li>
                 </ul>
             </div>
 
@@ -944,49 +1013,76 @@
                     <span class="exp-date">08/2021 – 12/2024 • Tamil Nadu, India</span>
                 </div>
                 <ul class="bullets">
-                    <li>Led the migration of legacy Hadoop data pipelines to <strong>Azure Databricks</strong>, drastically enhancing data throughput.</li>
-                    <li>Optimized SQL queries and PySpark jobs to improve processing speeds and reduce resource usage.</li>
-                    <li>Earned <strong>3 Spot Awards and 1 R&D Award</strong> for technical innovation and delivery excellence.</li>
+                    <li>Designed, developed, and maintained scalable ETL/ELT data pipelines using Azure Databricks, Apache Airflow, and SQL.</li>
+                    <li>Migrated enterprise data pipelines from Hadoop to Azure Databricks, improving performance and scalability.</li>
+                    <li>Optimized SQL/HQL queries and PySpark jobs to enhance processing efficiency.</li>
+                    <li>Received <strong>3 Spot Awards and an R&D Award</strong> for outstanding performance and innovation.</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Certifications & Education -->
+    <!-- Certifications & Education (Linked to LinkedIn Profile) -->
     <section>
         <div class="section-header">
             <i class="fa-solid fa-graduation-cap"></i>
             <span>Certifications & Education</span>
         </div>
         <div class="cert-grid">
-            <div class="cert-card">
-                <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
-                <div>
-                    <div class="cert-title">Databricks Certified Data Engineer Associate</div>
-                    <div class="cert-issuer">Databricks</div>
+            <a href="https://www.linkedin.com/in/sandeep-s-lopez-780177182/details/certifications/" target="_blank" class="cert-card">
+                <div class="cert-info">
+                    <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <div>
+                        <div class="cert-title">Databricks Certified Data Engineer Associate</div>
+                        <div class="cert-issuer">Databricks</div>
+                    </div>
                 </div>
-            </div>
-            <div class="cert-card">
-                <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
-                <div>
-                    <div class="cert-title">Fundamentals of Databricks Lakehouse</div>
-                    <div class="cert-issuer">Accreditation</div>
+                <i class="fa-solid fa-arrow-up-right-from-square cert-link-icon"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/sandeep-s-lopez-780177182/details/certifications/" target="_blank" class="cert-card">
+                <div class="cert-info">
+                    <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+                    <div>
+                        <div class="cert-title">Fundamentals of Databricks Lakehouse</div>
+                        <div class="cert-issuer">Accreditation</div>
+                    </div>
                 </div>
-            </div>
-            <div class="cert-card">
-                <div class="cert-icon"><i class="fa-solid fa-user-graduate"></i></div>
-                <div>
-                    <div class="cert-title">B.Tech in Computer Science</div>
-                    <div class="cert-issuer">Bir Tikendrajit University (2017–2021)</div>
+                <i class="fa-solid fa-arrow-up-right-from-square cert-link-icon"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/sandeep-s-lopez-780177182/details/certifications/" target="_blank" class="cert-card">
+                <div class="cert-info">
+                    <div class="cert-icon"><i class="fa-solid fa-code"></i></div>
+                    <div>
+                        <div class="cert-title">SQL Certifications (Basic, Intermediate, Advanced)</div>
+                        <div class="cert-issuer">HackerRank & Udemy</div>
+                    </div>
                 </div>
-            </div>
-            <div class="cert-card">
-                <div class="cert-icon"><i class="fa-solid fa-code"></i></div>
-                <div>
-                    <div class="cert-title">SQL & Python Certifications</div>
-                    <div class="cert-issuer">HackerRank & Udemy</div>
+                <i class="fa-solid fa-arrow-up-right-from-square cert-link-icon"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/sandeep-s-lopez-780177182/details/certifications/" target="_blank" class="cert-card">
+                <div class="cert-info">
+                    <div class="cert-icon"><i class="fa-brands fa-python"></i></div>
+                    <div>
+                        <div class="cert-title">Python (Basic) Certification</div>
+                        <div class="cert-issuer">HackerRank</div>
+                    </div>
                 </div>
-            </div>
+                <i class="fa-solid fa-arrow-up-right-from-square cert-link-icon"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/sandeep-s-lopez-780177182/details/education/" target="_blank" class="cert-card">
+                <div class="cert-info">
+                    <div class="cert-icon"><i class="fa-solid fa-user-graduate"></i></div>
+                    <div>
+                        <div class="cert-title">B.Tech in Computer Science</div>
+                        <div class="cert-issuer">Bir Tikendrajit University (2017–2021)</div>
+                    </div>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square cert-link-icon"></i>
+            </a>
         </div>
     </section>
 
