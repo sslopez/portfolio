@@ -59,7 +59,7 @@
             margin: 0 auto;
         }
 
-        /* Fixed / Dynamic Action Bar for Recruiters */
+        /* Fixed Action Bar for Recruiters */
         .recruiter-actions {
             position: sticky;
             top: 0.5rem;
@@ -247,10 +247,10 @@
         .pill {
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
+            gap: 0.48rem;
             background: var(--bg-body);
             color: var(--text-heading);
-            padding: 0.4rem 0.75rem;
+            padding: 0.45rem 0.85rem;
             border-radius: var(--radius-sm);
             border: 1px solid var(--border);
             font-weight: 500;
@@ -267,12 +267,23 @@
             text-decoration: underline;
         }
 
-        .badge-location {
-            background-color: var(--accent-purple-light);
+        /* Redesigned Relocation Badge */
+        .relocation-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: linear-gradient(135deg, #f5f3ff 0%, #eff6ff 100%);
+            border: 1px solid #ddd6fe;
             color: var(--accent-purple);
-            border: 1px solid #e9d5ff;
-            font-weight: 600;
-            align-self: flex-start;
+            padding: 0.5rem 0.9rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(124, 58, 237, 0.08);
+        }
+
+        .relocation-badge i {
+            color: var(--primary);
         }
 
         /* Section Cards */
@@ -550,7 +561,7 @@
             line-height: 1.5;
         }
 
-        /* Experience Timeline */
+        /* Elaborated Work Experience Timeline */
         .experience-timeline {
             position: relative;
             padding-left: 1.25rem;
@@ -580,12 +591,12 @@
 
         .timeline-block {
             position: relative;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.75rem;
         }
 
         @media (min-width: 768px) {
             .timeline-block {
-                margin-bottom: 2rem;
+                margin-bottom: 2.25rem;
             }
         }
 
@@ -619,7 +630,7 @@
             display: flex;
             flex-direction: column;
             gap: 0.25rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
         }
 
         @media (min-width: 640px) {
@@ -631,13 +642,13 @@
         }
 
         .exp-company {
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             font-weight: 800;
             color: var(--text-heading);
         }
 
         .exp-role {
-            font-size: 0.95rem;
+            font-size: 0.98rem;
             font-weight: 700;
             color: var(--primary);
         }
@@ -648,7 +659,7 @@
             font-weight: 600;
             color: var(--text-muted);
             background: var(--bg-body);
-            padding: 0.2rem 0.5rem;
+            padding: 0.2rem 0.6rem;
             border-radius: var(--radius-sm);
             border: 1px solid var(--border);
             margin-top: 0.2rem;
@@ -674,7 +685,8 @@
         }
 
         ul.bullets li {
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.6rem;
+            line-height: 1.6;
         }
 
         ul.bullets li strong {
@@ -773,11 +785,11 @@
         </div>
         <div class="cta-buttons">
             <a href="mailto:sandeepslopez@gmail.com" class="btn btn-primary">
-                <i class="fa-solid fa-envelope"></i> Contact Me
+                <i class="fa-solid fa-envelope"></i> Contact Candidate
             </a>
-            <!-- Direct Download Link to Raw PDF -->
-            <a href="https://raw.githubusercontent.com/sslopez/portfolio/main/SANDEEP%20S%20LOPEZ%20AZURE%20DATA%20ENGINEER.pdf" download target="_blank" class="btn btn-outline">
-                <i class="fa-solid fa-file-pdf"></i> Save / PDF
+            <!-- Updated Direct PDF Download Action -->
+            <a href="https://raw.githubusercontent.com/sslopez/portfolio/main/SANDEEP%20S%20LOPEZ%20AZURE%20DATA%20ENGINEER.pdf" download="SANDEEP_S_LOPEZ_AZURE_DATA_ENGINEER.pdf" target="_blank" class="btn btn-outline">
+                <i class="fa-solid fa-file-arrow-down"></i> Download PDF
             </a>
         </div>
     </div>
@@ -794,12 +806,12 @@
                     <span class="pill"><i class="fa-solid fa-phone"></i> +91-7559916461</span>
                     <span class="pill"><i class="fa-solid fa-envelope"></i> <a href="mailto:sandeepslopez@gmail.com">sandeepslopez@gmail.com</a></span>
                     <span class="pill"><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/sandeep-s-lopez-780177182/" target="_blank">LinkedIn Profile</a></span>
-                    <span class="pill"><i class="fa-solid fa-globe"></i> <a href="https://sslopez.github.io/portfolio/" target="_blank">Portfolio</a></span>
                 </div>
             </div>
             <div>
-                <span class="pill badge-location">
-                    <i class="fa-solid fa-plane"></i> Open to Relocation: UAE
+                <!-- Better Styled Relocation Badge -->
+                <span class="relocation-badge">
+                    <i class="fa-solid fa-globe"></i> Open to Relocation: UAE
                 </span>
             </div>
         </div>
@@ -812,7 +824,7 @@
             <span>Executive Summary & Impact ROI</span>
         </div>
         <p class="summary-p">
-            Azure Data Engineer with <strong>5+ years of experience</strong> architecting, optimizing, and automating enterprise cloud platforms and scalable ETL/ELT pipelines. Specialized in <strong>Azure Databricks, Apache Airflow, Lakehouse architectures</strong>, and driving operational efficiency through <strong>Generative AI & DataOps automation</strong>.
+            Azure Data Engineer with <strong>5+ years of experience</strong>[cite: 1] designing, developing, and optimizing Azure-based data solutions, ETL/ELT pipelines, and cloud data platforms[cite: 1]. Proficient in <strong>Azure Databricks, Azure Data Factory (ADF), Apache Airflow, Delta Lake, and Lakehouse architectures</strong>[cite: 1]. Demonstrated track record in delivering high-impact operational efficiency—including <strong>$120K/month in cloud infrastructure cost savings</strong>[cite: 1] and <strong>slashing execution times by 50%</strong>[cite: 1]. Experienced in driving <strong>AI integration, DataOps automation (Slack bots, GenAI APIs)</strong>, and enterprise-grade pipeline observability[cite: 1].
         </p>
         
         <div class="metrics-grid">
@@ -820,21 +832,21 @@
                 <div class="metric-icon"><i class="fa-solid fa-piggy-bank"></i></div>
                 <div>
                     <div class="metric-val">$120K / mo</div>
-                    <div class="metric-label">Databricks Infrastructure Savings</div>
+                    <div class="metric-label">Databricks Cost Optimization[cite: 1]</div>
                 </div>
             </div>
             <div class="metric-card speed">
                 <div class="metric-icon"><i class="fa-solid fa-bolt"></i></div>
                 <div>
                     <div class="metric-val">50% Faster</div>
-                    <div class="metric-label">Airflow Pipeline Execution Time</div>
+                    <div class="metric-label">Airflow Execution Time Cut[cite: 1]</div>
                 </div>
             </div>
             <div class="metric-card efficiency">
                 <div class="metric-icon"><i class="fa-solid fa-robot"></i></div>
                 <div>
                     <div class="metric-val">70% Less</div>
-                    <div class="metric-label">Manual Ops Effort via DagMate AI</div>
+                    <div class="metric-label">Manual Ops via DagMate AI[cite: 1]</div>
                 </div>
             </div>
         </div>
@@ -852,10 +864,11 @@
                 <div class="tags-container">
                     <span class="tag featured">Azure Databricks</span>
                     <span class="tag featured">Azure Data Factory (ADF)</span>
-                    <span class="tag">Azure Synapse</span>
-                    <span class="tag">ADLS Gen2</span>
+                    <span class="tag">Azure Synapse Analytics</span>
+                    <span class="tag">Azure Data Lake Storage (ADLS)</span>
                     <span class="tag">Delta Lake</span>
                     <span class="tag">Lakehouse Architecture</span>
+                    <span class="tag">Data Warehousing</span>
                 </div>
             </div>
             <div class="skill-group">
@@ -865,25 +878,27 @@
                     <span class="tag featured">Python</span>
                     <span class="tag featured">PySpark</span>
                     <span class="tag">SQL / Query Tuning</span>
-                    <span class="tag">ETL/ELT Design</span>
+                    <span class="tag">ETL/ELT Pipeline Design</span>
+                    <span class="tag">Data Quality Frameworks</span>
                     <span class="tag">GCP</span>
                 </div>
             </div>
             <div class="skill-group">
                 <div class="skill-group-title"><i class="fa-solid fa-microchip"></i> AI, MLOps & DevOps</div>
                 <div class="tags-container">
-                    <span class="tag">Agentic AI</span>
-                    <span class="tag">OpenAI APIs</span>
+                    <span class="tag">Agentic AI & OpenAI APIs</span>
                     <span class="tag">Slack Bot Development</span>
-                    <span class="tag">GitHub Actions</span>
+                    <span class="tag">GitHub Actions CI/CD</span>
                     <span class="tag">Docker</span>
+                    <span class="tag">Azure DevOps</span>
                     <span class="tag">Power BI</span>
+                    <span class="tag">Jira</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Projects (All Resume Projects Included) -->
+    <!-- Featured Projects -->
     <section>
         <div class="section-header">
             <i class="fa-solid fa-rocket"></i>
@@ -894,15 +909,15 @@
                 <div>
                     <div class="project-name">DagMate – AI DataOps Platform</div>
                     <div class="project-tech">Python • Apache Airflow • Databricks • Slack API • OpenAI APIs</div>
-                    <p class="project-desc">Slack-based DataOps platform enabling self-service pipeline operations, workflow orchestration, monitoring, and automated troubleshooting. Reduced manual operational effort by 70%.</p>
+                    <p class="project-desc">Architected a Slack-based DataOps tool enabling self-service pipeline operations, workflow orchestration, monitoring, and automated troubleshooting[cite: 1]. Cut manual operational effort by 70%[cite: 1].</p>
                 </div>
             </div>
 
             <div class="project-card">
                 <div>
-                    <div class="project-name">Databricks Cost Optimization</div>
+                    <div class="project-name">Databricks Infrastructure & Cost Optimization</div>
                     <div class="project-tech">Azure Databricks • PySpark • SQL</div>
-                    <p class="project-desc">Optimized Azure Databricks workloads and implemented cluster cost optimization strategies, delivering ~$120K/month in cloud infrastructure cost savings.</p>
+                    <p class="project-desc">Implemented workload optimizations, memory tuning, execution plan analysis, and cluster sizing strategies, delivering ~$120K/month in infrastructure cost savings[cite: 1].</p>
                 </div>
             </div>
 
@@ -910,7 +925,7 @@
                 <div>
                     <div class="project-name">Enterprise Airflow Modernization</div>
                     <div class="project-tech">Apache Airflow • Python • Azure Databricks</div>
-                    <p class="project-desc">Restructured complex DAGs and scheduling workflows, reducing pipeline execution times by 50% and increasing system reliability.</p>
+                    <p class="project-desc">Restructured complex scheduling DAGs and execution workflows, achieving a 50% reduction in total job execution runtimes while improving platform reliability[cite: 1].</p>
                 </div>
             </div>
 
@@ -918,7 +933,7 @@
                 <div>
                     <div class="project-name">AI-Powered Slack Data Assistant</div>
                     <div class="project-tech">Python • Slack API • Databricks • OpenAI APIs</div>
-                    <p class="project-desc">Built AI assistants integrated with Databricks and enterprise datasets, enabling natural language data discovery, dataset insights, and operational troubleshooting.</p>
+                    <p class="project-desc">Built conversational AI assistants integrated with Databricks and enterprise datasets, enabling natural language data discovery, dataset insights, and troubleshooting[cite: 1].</p>
                 </div>
             </div>
 
@@ -926,7 +941,7 @@
                 <div>
                     <div class="project-name">SharePoint to Databricks Migration</div>
                     <div class="project-tech">Python • SharePoint • Azure Databricks</div>
-                    <p class="project-desc">Led SharePoint-to-Databricks ingestion modernization by developing a Python-based ingestion framework, replacing legacy workflows and improving scalability.</p>
+                    <p class="project-desc">Led the modernization of SharePoint-to-Databricks ingestion workflows by building a custom Python-based framework, replacing legacy systems and improving maintainability[cite: 1].</p>
                 </div>
             </div>
 
@@ -934,7 +949,7 @@
                 <div>
                     <div class="project-name">Hadoop to Azure Databricks Migration</div>
                     <div class="project-tech">Azure Databricks • Hadoop • PySpark • SQL</div>
-                    <p class="project-desc">Migrated enterprise-scale legacy Hadoop data pipelines to Azure Databricks, significantly improving processing performance and scalability.</p>
+                    <p class="project-desc">Migrated enterprise legacy Hadoop data pipelines to Azure Databricks, significantly boosting data processing throughput and pipeline scalability[cite: 1].</p>
                 </div>
             </div>
 
@@ -942,7 +957,7 @@
                 <div>
                     <div class="project-name">CI/CD Automation for Data & Analytics</div>
                     <div class="project-tech">GitHub Actions • Power BI • Git • Databricks</div>
-                    <p class="project-desc">Implemented automated CI/CD pipelines using GitHub Actions to automate deployments, improve release reliability, and accelerate delivery cycles.</p>
+                    <p class="project-desc">Automated deployments across data & analytics workloads using GitHub Actions, boosting release reliability and accelerating delivery cycles[cite: 1].</p>
                 </div>
             </div>
 
@@ -950,21 +965,21 @@
                 <div>
                     <div class="project-name">Power BI Deployment Automation</div>
                     <div class="project-tech">Power BI • GitHub Actions • Azure Data Factory</div>
-                    <p class="project-desc">Automated Power BI dashboard deployment and pipeline synchronization with Azure Data Factory to streamline analytics publishing.</p>
+                    <p class="project-desc">Built automated release pipelines for Power BI analytics dashboards and synchronized data orchestration workflows via Azure Data Factory[cite: 1].</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Work Experience -->
+    <!-- Fully Elaborated Work Experience -->
     <section>
         <div class="section-header">
             <i class="fa-solid fa-briefcase"></i>
-            <span>Work Experience</span>
+            <span>Professional Work Experience</span>
         </div>
 
         <div class="experience-timeline">
-            <!-- Experience 1 -->
+            <!-- Experience 1: Adobe -->
             <div class="timeline-block">
                 <div class="timeline-dot"></div>
                 <div class="exp-header">
@@ -975,17 +990,18 @@
                     <span class="exp-date">07/2025 – Present • Karnataka, India</span>
                 </div>
                 <ul class="bullets">
-                    <li>Designed, developed, and maintained enterprise-scale ETL/ELT pipelines using <strong>Apache Airflow, Azure Databricks, and Python</strong>.</li>
-                    <li>Built and optimized Apache Airflow DAGs, reducing job execution time by ~50% and improving reliability.</li>
-                    <li>Delivered ~$120K/month in infrastructure cost savings by optimizing Azure Databricks workloads.</li>
-                    <li>Developed <strong>DagMate</strong>, a Slack-based DataOps platform, reducing manual operational effort by 70%.</li>
-                    <li>Built AI-powered Slack assistants integrated with Databricks for natural language data discovery and automated troubleshooting.</li>
-                    <li>Modernized SharePoint-to-Databricks ingestion using a Python-based framework and built automated CI/CD via GitHub Actions.</li>
-                    <li>Developed an AI-assisted Jira Health Dashboard for real-time visibility into sprint health, task aging, and team performance metrics.</li>
+                    <li><strong>Enterprise Pipeline Engineering:</strong> Designed, developed, and maintained enterprise-scale ETL/ELT pipelines using Apache Airflow, Azure Databricks, and Python[cite: 1].</li>
+                    <li><strong>Airflow Optimization:</strong> Built and optimized Apache Airflow DAGs, reducing overall job execution time by ~50% and improving workflow reliability and SLA compliance[cite: 1].</li>
+                    <li><strong>Infrastructure Cost Reduction:</strong> Spearheaded Databricks workload optimization and cluster cost strategy initiatives, generating <strong>~$120K/month in infrastructure cost savings</strong> while improving platform performance[cite: 1].</li>
+                    <li><strong>Self-Service DataOps Platform (DagMate):</strong> Developed <strong>DagMate</strong>, a Slack-based DataOps solution enabling self-service pipeline operations, orchestration, monitoring, and alert management, reducing manual operational effort by <strong>70%</strong>[cite: 1].</li>
+                    <li><strong>Generative AI & Data Assistants:</strong> Created AI-powered Slack assistants integrated with Databricks and enterprise datasets to enable natural language data discovery, dataset insights, and operational troubleshooting[cite: 1].</li>
+                    <li><strong>Modernization & Ingestion Frameworks:</strong> Modernized legacy SharePoint-to-Databricks ingestion workflows by developing a scalable, maintainable Python-based ingestion framework[cite: 1].</li>
+                    <li><strong>CI/CD & Quality Automation:</strong> Implemented CI/CD pipelines using GitHub Actions to automate release deployments and engineered automated data quality validation and reconciliation frameworks to guarantee data consistency[cite: 1].</li>
+                    <li><strong>AI Sprint Visibility:</strong> Built an AI-assisted Jira Health Dashboard delivering real-time visibility into sprint health, task aging, blocker tracking, and team performance metrics[cite: 1].</li>
                 </ul>
             </div>
 
-            <!-- Experience 2 -->
+            <!-- Experience 2: KeyValue -->
             <div class="timeline-block">
                 <div class="timeline-dot"></div>
                 <div class="exp-header">
@@ -996,13 +1012,14 @@
                     <span class="exp-date">12/2024 – 06/2025 • Kerala, India</span>
                 </div>
                 <ul class="bullets">
-                    <li>Containerized Apache Airflow using <strong>Docker</strong> for local development and workflow orchestration.</li>
-                    <li>Designed, developed, and optimized complex Airflow DAGs for scalable ETL/ELT pipelines on <strong>Google Cloud Platform (GCP)</strong>.</li>
-                    <li>Automated data workflows and pipeline scheduling to improve reliability and operational efficiency.</li>
+                    <li><strong>Containerized Local Development:</strong> Implemented Apache Airflow using Docker to standardize local development environments and streamline workflow orchestration[cite: 1].</li>
+                    <li><strong>GCP Data Pipelines:</strong> Designed, developed, and optimized complex Airflow DAGs for scalable ETL/ELT pipelines on Google Cloud Platform (GCP)[cite: 1].</li>
+                    <li><strong>Workflow Automation & Scheduling:</strong> Automated pipeline scheduling, execution monitoring, and error-handling routines to maximize operational uptime[cite: 1].</li>
+                    <li><strong>Root-Cause Analysis & Collaboration:</strong> Monitored execution logs, troubleshot pipeline failures, and collaborated with cross-functional engineering teams to deliver robust data solutions[cite: 1].</li>
                 </ul>
             </div>
 
-            <!-- Experience 3 -->
+            <!-- Experience 3: Latentview Analytics -->
             <div class="timeline-block">
                 <div class="timeline-dot"></div>
                 <div class="exp-header">
@@ -1013,10 +1030,11 @@
                     <span class="exp-date">08/2021 – 12/2024 • Tamil Nadu, India</span>
                 </div>
                 <ul class="bullets">
-                    <li>Designed, developed, and maintained scalable ETL/ELT data pipelines using Azure Databricks, Apache Airflow, and SQL.</li>
-                    <li>Migrated enterprise data pipelines from Hadoop to Azure Databricks, improving performance and scalability.</li>
-                    <li>Optimized SQL/HQL queries and PySpark jobs to enhance processing efficiency.</li>
-                    <li>Received <strong>3 Spot Awards and an R&D Award</strong> for outstanding performance and innovation.</li>
+                    <li><strong>Legacy Cloud Migration:</strong> Successfully migrated enterprise data pipelines from legacy Hadoop environments to Azure Databricks, unlocking higher scalability and performance[cite: 1].</li>
+                    <li><strong>Query & Job Performance Tuning:</strong> Optimized SQL/HQL queries and PySpark jobs to improve processing speed and resource efficiency across large datasets[cite: 1].</li>
+                    <li><strong>Workflow Orchestration & Quality Assurance:</strong> Built and maintained scalable ETL/ELT data pipelines using Azure Databricks, Apache Airflow, and SQL with automated data validation checks[cite: 1].</li>
+                    <li><strong>High Availability & Incident Troubleshooting:</strong> Managed real-time pipeline monitoring, root cause analysis, and incident resolution to ensure high availability and compliance with SLA requirements[cite: 1].</li>
+                    <li><strong>Technical Recognition:</strong> Awarded <strong>3 Spot Awards</strong> and <strong>1 R&D Award</strong> for outstanding engineering performance, innovation, and technical delivery[cite: 1].</li>
                 </ul>
             </div>
         </div>
@@ -1034,7 +1052,7 @@
                     <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
                     <div>
                         <div class="cert-title">Databricks Certified Data Engineer Associate</div>
-                        <div class="cert-issuer">Databricks</div>
+                        <div class="cert-issuer">Databricks[cite: 1]</div>
                     </div>
                 </div>
                 <i class="fa-solid fa-arrow-up-right-from-square cert-link-icon"></i>
@@ -1044,8 +1062,8 @@
                 <div class="cert-info">
                     <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
                     <div>
-                        <div class="cert-title">Fundamentals of Databricks Lakehouse</div>
-                        <div class="cert-issuer">Accreditation</div>
+                        <div class="cert-title">Fundamentals of Databricks Lakehouse Platform</div>
+                        <div class="cert-issuer">Accreditation[cite: 1]</div>
                     </div>
                 </div>
                 <i class="fa-solid fa-arrow-up-right-from-square cert-link-icon"></i>
@@ -1056,7 +1074,7 @@
                     <div class="cert-icon"><i class="fa-solid fa-code"></i></div>
                     <div>
                         <div class="cert-title">SQL Certifications (Basic, Intermediate, Advanced)</div>
-                        <div class="cert-issuer">HackerRank & Udemy</div>
+                        <div class="cert-issuer">HackerRank & Udemy[cite: 1]</div>
                     </div>
                 </div>
                 <i class="fa-solid fa-arrow-up-right-from-square cert-link-icon"></i>
@@ -1067,7 +1085,7 @@
                     <div class="cert-icon"><i class="fa-brands fa-python"></i></div>
                     <div>
                         <div class="cert-title">Python (Basic) Certification</div>
-                        <div class="cert-issuer">HackerRank</div>
+                        <div class="cert-issuer">HackerRank[cite: 1]</div>
                     </div>
                 </div>
                 <i class="fa-solid fa-arrow-up-right-from-square cert-link-icon"></i>
@@ -1078,7 +1096,7 @@
                     <div class="cert-icon"><i class="fa-solid fa-user-graduate"></i></div>
                     <div>
                         <div class="cert-title">B.Tech in Computer Science</div>
-                        <div class="cert-issuer">Bir Tikendrajit University (2017–2021)</div>
+                        <div class="cert-issuer">Bir Tikendrajit University (2017–2021)[cite: 1]</div>
                     </div>
                 </div>
                 <i class="fa-solid fa-arrow-up-right-from-square cert-link-icon"></i>
