@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandeep S Lopez | Azure Data Engineer & DataOps Specialist</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --primary-light: #eff6ff;
+            --secondary: #0f172a;
+            --accent: #7c3aed;
+            --accent-light: #f5f3ff;
+            --success: #059669;
+            --success-light: #ecfdf5;
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2.5rem 1rem;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* Hero / Header Card */
+        header {
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+        }
+
+        .header-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--secondary);
+            letter-spacing: -0.025em;
+            margin-bottom: 0.3rem;
+        }
+
+        .role-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem 1.25rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .contact-item a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .badge-relocate {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--accent-light);
+            color: var(--accent);
+            border: 1px solid #e9d5ff;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.35rem 0.75rem;
+            border-radius: 9999px;
+            margin-top: 0.5rem;
+        }
+
+        /* Sections */
+        section {
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            padding: 2rem;
+            margin-bottom: 1.75rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background-color: var(--border);
+            margin-left: 0.5rem;
+        }
+
+        /* Summary & Key Metrics */
+        .summary-text {
+            color: var(--text-main);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+        }
+
+        .metric-card {
+            background: var(--bg-main);
+            border-radius: 12px;
+            padding: 1.25rem;
+            border: 1px solid var(--border);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .metric-card.cost {
+            border-top: 4px solid var(--success);
+            background: linear-gradient(180deg, var(--success-light) 0%, var(--bg-main) 100%);
+        }
+
+        .metric-card.time {
+            border-top: 4px solid var(--primary);
+            background: linear-gradient(180deg, var(--primary-light) 0%, var(--bg-main) 100%);
+        }
+
+        .metric-card.effort {
+            border-top: 4px solid var(--accent);
+            background: linear-gradient(180deg, var(--accent-light) 0%, var(--bg-main) 100%);
+        }
+
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 0.25rem;
+        }
+
+        .metric-card.cost .metric-value { color: var(--success); }
+        .metric-card.time .metric-value { color: var(--primary); }
+        .metric-card.effort .metric-value { color: var(--accent); }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Skills Styling */
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .skill-category-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background-color: var(--primary-light);
+            color: var(--primary-hover);
+            border: 1px solid #bfdbfe;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.35rem 0.8rem;
+            border-radius: 8px;
+        }
+
+        .tag.accent {
+            background-color: var(--accent-light);
+            color: var(--accent);
+            border-color: #e9d5ff;
+        }
+
+        .tag.dark {
+            background-color: #f1f5f9;
+            color: var(--secondary);
+            border-color: #cbd5e1;
+        }
+
+        /* Experience & Projects */
+        .timeline-item {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1.75rem;
+            border-left: 2px solid var(--border);
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -5px;
+            top: 0.35rem;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            border: 2px solid var(--bg-card);
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .item-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .item-sub {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .item-date {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            background: var(--bg-main);
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+
+        ul.bullets {
+            padding-left: 1rem;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        ul.bullets li {
+            margin-bottom: 0.4rem;
+        }
+
+        ul.bullets li::marker {
+            color: var(--primary);
+        }
+
+        /* Project Cards Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .project-card {
+            background: var(--bg-main);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 0.4rem;
+        }
+
+        .project-tech {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+
+        .project-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Certifications & Education */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .cert-card {
+            background: var(--bg-main);
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            padding: 1rem;
+        }
+
+        .cert-name {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 0.2rem;
+        }
+
+        .cert-issuer {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-main">
+            <div>
+                <h1>Sandeep S Lopez</h1>
+                <div class="role-title">Azure Data Engineer | DataOps & MLOps Specialist</div>
+                <div class="contact-grid">
+                    <div class="contact-item">📍 Bengaluru, India</div>
+                    <div class="contact-item">📞 +91-7559916461</div>
+                    <div class="contact-item">✉️ <a href="mailto:sandeepslopez@gmail.com">sandeepslopez@gmail.com</a></div>
+                    <div class="contact-item">🌐 <a href="#">LinkedIn Profile</a></div>
+                </div>
+            </div>
+            <div>
+                <span class="badge-relocate">✈️ Open to Relocation: UAE</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Executive Summary & Impact Metrics -->
+    <section>
+        <div class="section-title">Executive Summary</div>
+        <p class="summary-text">
+            Azure Data Engineer with <strong>5+ years of experience</strong> designing, developing, and optimizing enterprise Azure data solutions, ETL/ELT pipelines, and cloud data platforms[cite: 1]. Specialized in workflow orchestration, data platform optimization, AI integrations, and building self-service DataOps tools[cite: 1].
+        </p>
+        <div class="metrics-grid">
+            <div class="metric-card cost">
+                <div class="metric-value">$120K/mo</div>
+                <div class="metric-label">Infrastructure Cost Savings Delivered[cite: 1]</div>
+            </div>
+            <div class="metric-card time">
+                <div class="metric-value">50%</div>
+                <div class="metric-label">Reduction in Airflow Job Execution Time[cite: 1]</div>
+            </div>
+            <div class="metric-card effort">
+                <div class="metric-value">70%</div>
+                <div class="metric-label">Manual Effort Reduced via DataOps Automation[cite: 1]</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Technical Skills -->
+    <section>
+        <div class="section-title">Core Technical Skills</div>
+        <div class="skills-container">
+            <div>
+                <div class="skill-category-title">Cloud & Data Engineering</div>
+                <div class="tags">
+                    <span class="tag">Azure Databricks</span>
+                    <span class="tag">Azure Data Factory (ADF)</span>
+                    <span class="tag">Azure Synapse</span>
+                    <span class="tag">ADLS</span>
+                    <span class="tag">Delta Lake</span>
+                    <span class="tag">Lakehouse Architecture</span>
+                </div>
+            </div>
+            <div>
+                <div class="skill-category-title">Orchestration & Programming</div>
+                <div class="tags">
+                    <span class="tag accent">Apache Airflow</span>
+                    <span class="tag accent">Python</span>
+                    <span class="tag accent">SQL</span>
+                    <span class="tag accent">PySpark</span>
+                    <span class="tag accent">GCP</span>
+                    <span class="tag accent">ETL / ELT</span>
+                </div>
+            </div>
+            <div>
+                <div class="skill-category-title">AI, MLOps & DevOps</div>
+                <div class="tags">
+                    <span class="tag dark">Agentic AI</span>
+                    <span class="tag dark">OpenAI APIs</span>
+                    <span class="tag dark">Slack Bot Development</span>
+                    <span class="tag dark">GitHub Actions</span>
+                    <span class="tag dark">Docker</span>
+                    <span class="tag dark">Azure DevOps</span>
+                    <span class="tag dark">Power BI</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section>
+        <div class="section-title">Key Projects & Innovation</div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div>
+                    <div class="project-title">DagMate – AI DataOps Platform</div>
+                    <div class="project-tech">Python • Airflow • Databricks • Slack API • OpenAI</div>
+                    <p class="project-desc">Slack-based DataOps tool enabling self-service pipeline orchestration, automated monitoring, and AI-driven troubleshooting[cite: 1]. Reduced operational effort by 70%[cite: 1].</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div>
+                    <div class="project-title">Databricks Cost Optimization</div>
+                    <div class="project-tech">Azure Databricks • PySpark • SQL</div>
+                    <p class="project-desc">Optimized workload configurations, cluster sizing, and query execution plans, delivering ~$120K/month in cloud infrastructure cost savings[cite: 1].</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div>
+                    <div class="project-title">Enterprise Airflow Modernization</div>
+                    <div class="project-tech">Apache Airflow • Python • Azure Databricks</div>
+                    <p class="project-desc">Restructured complex DAGs and scheduling workflows, achieving a 50% reduction in job execution time while improving platform SLA compliance[cite: 1].</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience -->
+    <section>
+        <div class="section-title">Professional Experience</div>
+        
+        <div class="timeline-item">
+            <div class="item-header">
+                <div class="item-title">Data & ML Ops Engineer</div>
+                <div class="item-date">07/2025 – Present</div>
+            </div>
+            <div class="item-sub">Adobe | Karnataka, India</div>
+            <ul class="bullets">
+                <li>Architected scalable ETL/ELT pipelines using Apache Airflow, Azure Databricks, and Python[cite: 1].</li>
+                <li>Developed AI-powered Slack assistants and Jira Health Dashboards enabling natural language dataset discovery and real-time sprint visibility[cite: 1].</li>
+                <li>Implemented CI/CD pipelines via GitHub Actions and established enterprise-grade data quality and observability frameworks[cite: 1].</li>
+            </ul>
+        </div>
+
+        <div class="timeline-item">
+            <div class="item-header">
+                <div class="item-title">Data Engineer</div>
+                <div class="item-date">12/2024 – 06/2025</div>
+            </div>
+            <div class="item-sub">KeyValue Software Systems | Kerala, India</div>
+            <ul class="bullets">
+                <li>Containerized Apache Airflow environments using Docker for standardized local development and deployment[cite: 1].</li>
+                <li>Designed, optimized, and maintained complex Airflow DAGs for scalable GCP data pipelines[cite: 1].</li>
+            </ul>
+        </div>
+
+        <div class="timeline-item">
+            <div class="item-header">
+                <div class="item-title">Data Engineer</div>
+                <div class="item-date">08/2021 – 12/2024</div>
+            </div>
+            <div class="item-sub">Latentview Analytics | Tamil Nadu, India</div>
+            <ul class="bullets">
+                <li>Migrated legacy Hadoop enterprise data pipelines to Azure Databricks to improve throughput and processing speed[cite: 1].</li>
+                <li>Optimized PySpark jobs and tuned complex SQL queries[cite: 1].</li>
+                <li>Honored with 3 Spot Awards and an R&D Award for technical excellence and innovation[cite: 1].</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Certifications & Education -->
+    <section>
+        <div class="section-title">Certifications & Education</div>
+        <div class="cert-grid">
+            <div class="cert-card">
+                <div class="cert-name">Databricks Certified Data Engineer Associate</div>
+                <div class="cert-issuer">Databricks</div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-name">Fundamentals of Databricks Lakehouse</div>
+                <div class="cert-issuer">Accreditation</div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-name">B.Tech in Computer Science</div>
+                <div class="cert-issuer">Bir Tikendrajit University (2017–2021)</div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-name">SQL & Python Certifications</div>
+                <div class="cert-issuer">HackerRank & Udemy</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        © Sandeep S Lopez • Azure Data Engineer Portfolio
+    </footer>
+
+</div>
+
+</body>
+</html>
